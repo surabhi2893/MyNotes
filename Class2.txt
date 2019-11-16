@@ -1,0 +1,5 @@
+Region - geographical location
+AVAILABILITY Zone - Physical Data Centre
+
+
+to access your instance from windows os you need putty private key (.ppk)

@@ -1,0 +1,28 @@
+pipeline
+{
+  agent any
+  
+    stages
+    {
+      stage ('SCM Checkout')
+      {
+        git 'https://github.com/vgurunani/maven-project.git'
+      }
+    }  
+	
+	{
+      stage ('build and sonar')
+      { 
+        steps
+        {
+          withSonarQubeEnv(credentialsId: 'mysonar', installationName: 'jenkinstosonar')
+          {
+            withMaven(maven: 'LocalMaven')
+            {
+              sh 'mvn clean package sonar:sonar'
+            }  
+          }
+        }
+		}
+	 }
+}

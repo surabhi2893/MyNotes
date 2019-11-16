@@ -1,0 +1,39 @@
+git can track files (versions)
+file will be created in working area(untracked)--> staging area(tracked but not commited)--> local area(commited)--> remote location
+$ git add - to add
+$ git branch - to check branches
+git config user.email "vaish23gurunani@gmail.com"
+git log - logs of repo
+git status - status of the branch 
+git branch - check branch in which you are
+git init - initialize empty repo
+git log --oneline - logs in oneline
+git commit -m "messege" - to commit branch
+git checkout -b branchname - it craetes new branch and also sitch it to the new branch
+git checkout "branchname" - to switch to other branch 
+git merge branchname - to merge with master
+git remote add origin https://github.com/vgurunani/Ethans_devopsgit.git --- add remote url as origin (yuo can give any name in place of origin)
+git remote -v  - to check how many remote repo you have added
+git branch -d branchname - to delete the branch
+git add * - add all files into staging area
+git tree
+git show "commit id"
+git push -u origin master
+git clone "url" -it downloads an existing git repo in your local machine
+git pull - only pull changes (it fetch code and merge)
+git fetch  - you have to merge manually coz it will download al changes in master branch of repo
+git branch -a - to see hidden branches
+git revert "commitid" - to revert back to the specific version
+git reset/restore --hard  - it(hard) will remove file which is in staging area also clean working area
+git reset --soft - it will move file from staging to working area
+git reset --mixed - it will 
+git reset --hard HEAD~3 - head will point to 3rd latest commit 
+same file and same line generates conflict
+git branch -a - to show all branches
+git branch -d - to delete the branch
+**can we commit file directly - YES
+How - use command $git commit -am "messege"   am means add and commit
+but it won't work for new created file which is not yet commited
+
+**gitignore file - if you want to ignore some sh files etc
+

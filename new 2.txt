@@ -1,0 +1,74 @@
+deploy a static website using nginx
+try to create a docker image from jenkins (integration with docker and jenkins VMs), install docker package first on jenkins VM 
+try to push docker images from jenkins to docker image
+
+**BEST PRACTICES TO MANAGE DOCKERFILE :
+
+
+In Python --> below two files are mandatory where app.py file will be provided by developer
+
+1.requirements.txt
+Flask - user for web development processing 
+redis - for database cache
+
+2.app.py 
+
+
+by default there are three networks in docker 
+
+1.Null -->
+2.Host --> is responsible for container to VM (where docker container resides in)communication and vice versa
+3.Bridge --> Bridge nw is responsible for container to container communication
+
+If the containers are in same bridge they can talk to each other
+If the containers are on different bridge networks then there will be no communication
+
+
+$docker network ls --> list of networks
+$docker inspect <cont id> --> gives all info about the container including network n all
+$docker network create my-bridge --> to create acustom bridge nw
+$ docker run -itd --network my-bridge --name ubuntu23 ubuntu /bin/bash
+
+use case-->to seggregate the applications in different network
+
+
+**How to create a image from existing container (what if my container is down and it has applications installed)--> using docker commit command
+once image is ready then create a container --> using docker run command
+
+LAB-->
+eb4c6edd2bd7 container has git installed , let's stop it
+$docker stop eb4c6edd2bd7
+$docker commit -m "create image" eb4c6edd2bd7 mygitimage 
+$docker run -itd --name gitcontainer mygitimage /bin/bash
+$docker exec -it gitcontainer /bin/bash
+$git --version --> verify using git command
+
+
+**How can we move a container from one VM to another VM without using docker registry/hub  OR  
+Can we convert a docker container into a tar file OR
+Is it possible to carry a container in pen-drive 
+
+ANS --> YES
+$docker export <cont id> > /home/export.tar
+$docker save <imagename> > /tmp/imagename.tar
+
+
+OVERLAY NETWORK:
+
+DOCKER SWARM comes into the picture here
+Desired State
+
+**how two container can communicate with each other which resides on TWO DIFFERENT VMs - OVERLAY NETWORK
+
+create one more Docker VM for SWARM
+
+docker swarm init
+
+In swarm there are 4 default networks
+
+docker network create --driver overlay myoverlay  - to create custom overlay nw
+
+ALpine is a flavor of linux in case of container  coz it is very light (size : 5.58 MB)
+
+Assignment:
+

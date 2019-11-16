@@ -1,0 +1,56 @@
+FROM - For base image
+RUN - to execute commands during docker image creation
+COPY - Copy certain files from your local system or laptop
+ADD - similar to copy, but through add parameter we can download or copy files from external links (exa- internet)
+EXPOSE - to expose application
+MAINTAINER - Author of docker image, also we can provide some info about docker image
+CMD - to execute commands during the container creation(not image creation)
+ENTRYPOINT - to execute commands during the container creation but it has higher priority over CMD, it means it will execute first
+ARG - to define some arguments
+
+
+**write a smallest dockerfile
+
+- which consist of just FROM
+exa - FROM ubuntu:16.04
+
+-------------------------------------------
+**how to install some packages?
+
+- FROM ubuntu:16.04
+RUN apt-get update -y
+docker build -t myimage02 .
+
+-------------------------------------------
+**to install git 
+
+- FROM ubuntu:16.04
+RUN apt-get update -y
+RUN apt-get install git -y
+
+docker build -t myimage03 .
+docker run -itd --name mycontainer myimage03 /bin/bash
+docker exec -it <cont id> /bin/bash
+
+---------------------------------------------------------
+
+**How we can specify author/maintainer, info about docker image
+
+FROM ubuntu:16.04
+MAINTAINER Vaishali, git docker	
+RUN apt-get update -y
+RUN apt-get install git -y
+
+------------------------------------------------------
+
+**How to copy files from local system
+
+FROM ubuntu
+RUN mkdir -p /dir1/dir2/dir3
+COPY abc.txt /dir1/dir2/dir3
+---------------------------------------------------------
+
+**How to host a static web page
+
+FROM httpd
+COPY index.html /var/www/html

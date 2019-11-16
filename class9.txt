@@ -1,0 +1,36 @@
+AppName			DefaultPort
+
+httpd				80	
+tomcat 				8080
+jenkins				8080
+nginx				80	
+Jfrog				8081
+JBoss 				8080
+
+
+apt-get update
+apt-get install vim
+
+Docker File --> Docker build --> Docker Image --> Docker Push(---> docker hub > docker run > container)
+ 
+Docker File is a text file, contains some set of instructions
+
+exa:
+
+FROM CentOS
+RUN yum update -y
+RUN yum install httpd
+EXPOSE 80
+COPY index.html /var/www/html
+
+
+docker build -t (tag)mydockerimage .(current directry)
+														
+														
+FROM ubuntu
+RUN apt-get update -y
+RUN apt-get install httpd
+EXPOSE 80
+COPY index.html /var/www/html
+
+docker inspect <cont id>

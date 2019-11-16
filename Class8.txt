@@ -1,0 +1,31 @@
+Sonarqube : static code analysis
+it contains checkstayle, findbugs, PMD, plugins, Cubertura
+
+*How to promote packages from one env to another env and so one -> based on code coverage report
+
+docker run -d --name sonarqube -p 9000:9000 sonarqube
+
+-d -> run all process in background - detach mode
+run -> container creation and start image
+-p -> port 
+9000 : 9000 -> VM port : Application port
+
+*how can you access/map your docker based applications - by port mapping
+
+docker run -d --name sonarqube -p 9000:9000 sonarqube 
+
+sonar requires minimum 1 CPU free that's why we can't use t2.micro , use t2.medium
+
+f82cd3deb7328b9443964cd2f2147eff3f4a7f2c - jenkinstosonar token 
+
+*build .net project - MS build plugin, .net core sdk
+
+https://github.com/prakashk0301/Ant-WebProject.git
+
+jenkins and jfrog install locally
+
+Jenkins File --> written in groovy
+two types of jenkins file - 1. scripted starts with node
+							2. declarative starts with pipeline
+							
+							

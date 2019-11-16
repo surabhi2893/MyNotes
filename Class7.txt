@@ -1,0 +1,36 @@
+install nvm npm first on jenkins instance and then ceate a job for NodeJS
+
+t - general purpose exa - t2.micro, t2 nano
+m2 - memeory optimized - high exa - m4 large
+c - cpu optimized
+x - xtra
+g - graphics
+
+
+MASTER-SLAVE Architecture in Jenkins:
+
+JENKINS MASTER - 
+Scheduling build jobs.
+Dispatching builds to the slaves for the execution.
+Monitor the slaves.
+Recording and presenting the build results.
+Can also execute build jobs directly.
+
+JENKINS SLAVE -
+A slave is a Java executable that runs on a remote machine. The characteristics of the slave are :
+
+It hears requests from the Jenkins Master instance.
+Slaves can run on a variety of operating systems.
+The job of a Slave is to do as they are told to, which involves executing build jobs dispatched by the Master.
+We can configure a project to always run on a particular Slave machine or a particular type of Slave machine, or simply let Jenkins pick the next available Slave.
+
+Labels: Labels are used to group multiple agents into one logical group. Multiple labels must be separated by a space.
+with the help oflabel master will distribute jobs to slaves
+
+Using EFS?
+
+netstat command to check which ports are used and which are free
+how can we run processes in background - add &
+
+java -jar agent.jar -jnlpUrl http://18.196.143.151:8080/computer/SlaveNode1/slave-agent.jnlp -workDir "/root/jenkins-slave" &
+

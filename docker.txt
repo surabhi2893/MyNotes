@@ -1,0 +1,68 @@
+yum update -y
+yum install docker -y
+service docker start
+systemctl enable docker 
+service docker status
+docker -v 
+docker login
+
+-------------------|
+services		   |
+-------------------|
+application		   |
+-------------------|
+operating system   |
+-------------------|
+database		   |
+-------------------|
+Network			   |
+-------------------|
+hardware		   |
+-------------------|
+
+
+IAAS - EC2 
+PAAS - S3
+SAAS - GMAIL, G DRIVE
+
+VIRTUALIZATION -
+
+HOST OS -> OS-Level dependancy -> Hardware Virtualization -----> Guest OS 1 > Guest OS kernal > Guest OS-Level dependancy > Applications binary/library > Applications
+
+														  -----> Guest OS 2 > Guest OS kernal > Guest OS-Level dependancy > Applications binary/library > Applications
+
+
+Advantages of DOCKER :
+
+Fast Bootup time
+less resource consuption
+No OS level dependancies
+No Kernal
+lightweight
+
+DOCKERIZATION -
+
+HOST OS -> OS-Level dependancy -> DOCKER Engine ------> APP1 > App binary/library
+
+												------> APP2 > App binary/library
+
+In docker we only have binary/library files which are required to run application
+
+docker run -itd -p 8081:8080 jenkins
+docker search git 
+docker run -itd alpine/git
+
+
+docker follows software virtualization
+
+user input --> docker CLI --> docker engine (will check locally first)--> docker hub
+
+docker build command is used to create docker image
+
+**Diff bet Containerization & Virtualization
+
+
+docker create, docker pull, docker rm, docker rmi, docker images, docker start, docker run -it <image id>, docker stop, docker search, docker ps -a,
+docker exec -it <cont id> /bin/bash
+
+docker container's existance is only within docker VM, outside there's no access 

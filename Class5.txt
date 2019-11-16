@@ -1,0 +1,56 @@
+** How to merge specific commits to master - $git cherry-pick <commitid>
+git rebase - you can take all the changes that were commited on one branch and apply them on another branch
+*cherry-pick vs rebase vs merge
+Diff between git fork(remote to remote) and clone(remote repo to local repo)
+
+JENKINS -
+we will have git, java and maven in JENKINS
+Maven is a build tool 
+build is nothing but the compilation of code and execution of all the test cases 
+once the build is done it will generate artifact(in zip, war, ear format)
+if the source code is in java/javascript - Maven/Ant/Gradle
+							NodeJS - NVM/NPM
+							.net - MSBuild
+							Python- Python
+version - 2.176.3
+
+environment variable - go to global tool configuration and give location/path/version of the tools like java, maven etc
+Freestyle - is compadible with any language
+job will get created in workspace directory by default
+
+
+**how many shells are there in Linux
+
+*vvimp - LIFECYCLE OF MAVEN :
+
+1.validate - Validate your project: do we have all the required files in source code
+									Is the job configured properly
+									
+2.compile - compiles your source code
+
+3.test - executes all the test cases
+
+4.package - create a package (artifact). It could be in war,ear,zar. these packages will get stored in workspace directory
+
+5.install - download artifacts to local maven repository (m2 repository)
+
+6.verify - verify installed artifacts in maven local repository
+
+7.deploy - upload artifacts from local maven repo to remote repository artifactory
+
+**difference between waterfall , agile and devops
+**what is plugin
+**Create a package using Ant 
+**using Gradle 
+*which file format generates in you environment in artifact
+*diff between ear,war,jar,zip
+**create a CI/CD pipeline for JBOSS/Wildify
+
+----------------------------------
+war - web archieves
+jar - java archieves
+ear - enterprice archieves
+-----------------------------------
+/var/lib/jenkins/workspace/CIJob/webapp/target/webapp.war
+
+

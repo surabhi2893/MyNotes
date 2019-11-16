@@ -1,0 +1,46 @@
+Create policy for:
+
+EC2 (All EC2 Read)--> Elastic compute cloud (VM OR INSTANCE)
+Lambda (ALL)--> Serverless computing for developers
+S3 (Secific bucket read) --> Simple storage service
+VPC (Modify Rights) --> virtual private cloud 
+
+ARN --> Amazon Resource Name
+
+3 users --> IAM-User-dev --> Lambda
+            IAM-User-CloudEng -->  EC2
+            IAM-User-DEVOPS --> Admin
+
+Add tags to search, organize and manage access.
+
+
+Simple/Object Storage Service --> Upto 200 Buckets we can create (by default max limit) for each subscription
+                                  and you can put unlimited objects into a single bucket
+                                  object size limit --> 0KB - 5TB 
+
+
+Bucket Level Policy 
+Oobject Level Policy
+
+S3 Storage Classes:
+
+1.Standadrd Storage Class --> Stores frequently accessed data -->should have 1. low retrieval time (so that data should be imediately available)
+                                                                            2. high cost
+                                                                            3. high durability (99.999999999)
+                                                                            4. High Avaibility (99.99)
+
+2.Infrequent access Storage Class --> Stores infrequently accessed data --> RT high comparatively to ssc
+                                                                            Less compared to SSC
+                                                                            Durability and availability same as SSC
+
+3.Glacier --> Backup and archive purpose --> high RT, COST LESS, DURABILITY AND AVAILABILITY - 99.99
+exa : audit logs n all
+
+4.Glacier Deep Drive --> archive data that is used very rarely --> very high RT , Very less, Durability and availability - 99.99
+
+5. Intelligent- Tiering --> based on your access of data it will move accordingly to standard or infrequent class
+
+create rule to move data from Stadard to IA after 2 months and delete it after 120 days.
+
+
+
